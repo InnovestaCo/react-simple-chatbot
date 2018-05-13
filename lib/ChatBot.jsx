@@ -439,7 +439,7 @@ class ChatBot extends Component {
     } = this.props;
     const { options, component, asMessage } = step;
     const steps = this.generateRenderedStepsById();
-    const previousStep = index > 0 ? previousStep : {};
+    // const previousStep = index > 0 ? renderedSteps[index - 1] : {};
 
     if (component && !asMessage) {
       return (

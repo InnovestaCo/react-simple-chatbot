@@ -257,6 +257,12 @@ class ChatBot extends Component {
             this.input.focus();
           });
         } else {
+
+          renderedSteps.pop();
+          previousSteps.pop();
+          renderedSteps.push(previousStep);
+          previousSteps.push(previousStep);
+
           renderedSteps.push(nextStep);
           previousSteps.push(nextStep);
 

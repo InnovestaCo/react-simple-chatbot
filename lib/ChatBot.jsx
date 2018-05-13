@@ -258,11 +258,6 @@ class ChatBot extends Component {
           });
         } else {
 
-          renderedSteps.pop();
-          previousSteps.pop();
-          renderedSteps.push(previousStep);
-          previousSteps.push(previousStep);
-
           renderedSteps.push(nextStep);
           previousSteps.push(nextStep);
 
@@ -433,7 +428,7 @@ class ChatBot extends Component {
   }
 
   renderStep(step, index) {
-    const { renderedSteps } = this.state;
+    const { renderedSteps, previousStep } = this.state;
     const {
       avatarStyle,
       bubbleStyle,
@@ -444,7 +439,7 @@ class ChatBot extends Component {
     } = this.props;
     const { options, component, asMessage } = step;
     const steps = this.generateRenderedStepsById();
-    const previousStep = index > 0 ? renderedSteps[index - 1] : {};
+    const previousStep = index > 0 ? previousStep : {};
 
     if (component && !asMessage) {
       return (
